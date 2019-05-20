@@ -6,14 +6,14 @@ use Illuminate\Http\Request;
 
 class HelloController extends Controller
 {
-public function index() {
+public function index($id='noname', $pass='unknown') {
 return <<<EOF
 <html>
 <head>
 <title>Hello/index</title>
 <style>
     body {
-        font-size:16pt; 
+        font-size:16pt;
         color:#999;
     }
     h1 {
@@ -27,6 +27,10 @@ return <<<EOF
 <body>
 <h1>index</h1>
 <p>こちらはHelloコントローラーのindexページです</p>
+<ul>
+    <li>ID:{$id}</li>
+    <li>PASS: {$pass}</li>
+</ul>
 </body>
 </html>
 EOF;
