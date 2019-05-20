@@ -7,7 +7,7 @@ use Illuminate\Http\Response;
 
 class HelloController extends controller{
     public function index(){
-        return view('hello.index',['msg'=>'']);
+        return view('hello.index');
     }
     public function post(Request $request){
         return view('hello.index',['msg'=>$request->msg]);
