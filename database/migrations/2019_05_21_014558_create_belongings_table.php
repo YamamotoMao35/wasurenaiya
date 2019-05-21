@@ -15,6 +15,9 @@ class CreateBelongingsTable extends Migration
     {
         Schema::create('belongings', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('title');
+            $table->text('image');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
