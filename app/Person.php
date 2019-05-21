@@ -8,6 +8,11 @@ use App\Scopes\ScopePerson;
 
 class Person extends Model
 {
+    public function getData()
+    {
+        return $this->id . ': ' . $this->name . ' (' .$this->age .')';
+    }
+    
     protected $guarded = array('id');
 
     public static $rules = array(
