@@ -19,5 +19,5 @@
 @endsection
 
 @section('footer')
-copyright 2019 mihou
+copyright 2019 wasurenaiya.
 @endsection
