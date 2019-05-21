@@ -17,7 +17,6 @@ class CreateBelongingsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('image');
-            $table->integer('user_id');
             $table->timestamps();
         });
     }
