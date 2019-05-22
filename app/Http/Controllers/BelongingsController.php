@@ -11,7 +11,7 @@ class BelongingsController extends Controller
 {
     public function index()
     {
-        //
+        return view('belongings.index');
     }
 
     public function create()
