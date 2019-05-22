@@ -16,6 +16,7 @@
 		<link href="{{ ('css/owl.carousel.css')}}" rel="stylesheet">
 		<link href="{{ ('css/owl.theme.default.min.css') }}"  rel="stylesheet">
 		<link href="{{ ('css/style.css') }}" rel="stylesheet">
+		<link href="{{ ('css/wasurenaiya.css') }}" rel="stylesheet">
 		<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 		<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 		<script src="{{ ('js/ie-emulation-modes-warning.js')}}"></script>
@@ -40,7 +41,7 @@
 		<div class="header">
 			@yield('header')
 		</div>
-    <div class="content bg-success">
+    <div class="content-extend">
       @yield('content')
 		</div>
 		<div class="contact bg-white">
