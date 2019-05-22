@@ -7,6 +7,7 @@ use Illuminate\Http\Response;
 use App\Http\Requests\HelloRequest;
 use Illuminate\Support\Facades\DB;
 use App\Person;
+use Illuminate\Support\Facades\Auth;
 
 class HelloController extends controller{
     public function index(Request $request){
@@ -15,8 +16,9 @@ class HelloController extends controller{
         } else {
             $sort = $request->sort;
         }
+        $user = Auth::user();
         $items = DB::table('people')->orderBy($sort, 'asc')->paginate(5);
-        $param = ['items' => $items, 'sort' => $sort];
+        $param = ['items' => $items, 'sort' => $sort, 'user' => $user];
         return view('hello.index', $param);
     }
 
