@@ -15,7 +15,7 @@ class BoardController extends Controller
 
     public function add(Request $request)
     {
-        return view('board add');
+        return view('board.add');
     }
 
     public function create(Request $request)
