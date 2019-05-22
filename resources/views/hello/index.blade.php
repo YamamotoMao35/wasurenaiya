@@ -30,7 +30,9 @@
   </tr>
   @endforeach
 </table>
+<div class="mt-3">
 {{$items->appends(['sort' => $sort])->links()}}
+</div>
 @endsection
 
 @section('footer')
