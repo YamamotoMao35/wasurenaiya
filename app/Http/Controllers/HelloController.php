@@ -6,11 +6,18 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Requests\HelloRequest;
 use Illuminate\Support\Facades\DB;
+use App\Person;
 
 class HelloController extends controller{
     public function index(Request $request){
-        $items = DB::table('people')->orderBy('age','asc')->get();
-        return view('hello.index',['items'=>$items]);
+        if(!$request->sort) {
+            $sort = 'id';
+        } else {
+            $sort = $request->sort;
+        }
+        $items = DB::table('people')->orderBy($sort, 'asc')->paginate(5);
+        $param = ['items' => $items, 'sort' => $sort];
+        return view('hello.index', $param);
     }
 
     public function post(Request $request)
