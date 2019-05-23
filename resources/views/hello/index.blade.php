@@ -17,7 +17,7 @@
 
 @section('content')
 <!-- ミドルウェアの説明 -->
-<p>これは、<middleware>google.com</middleware>へのリンクです。</p>
+<p>これは、<middleware>localhost:8000/hello/add</middleware>へのリンクです。</p>
 <p>これは、<middleware>localhost:8000/wasurenaiya</middleware>へのリンクです。</p>
 <p>これは、<middleware>localhost:8000/home</middleware>へのリンクです。</p>
 <!-- ログイン認証 -->
