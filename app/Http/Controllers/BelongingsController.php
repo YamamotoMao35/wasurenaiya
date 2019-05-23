@@ -47,13 +47,13 @@ class BelongingsController extends Controller
         return view('hello.show',['items' => $items]);
     }
 
-    public function edit($id)
+    public function edit(Request $request)
     {
         $item = DB::table('people')->where('id', $request->id)->first();
         return view('hello.edit', ['form' => $item]);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         $param = [
             'id' => $request->id,
@@ -65,7 +65,7 @@ class BelongingsController extends Controller
         return redirect('/hello');
     }
 
-    public function destroy($id)
+    public function destroy(Request $request)
     {
         $item = DB::table('people')->where('id', $request->id)->first();
         return view('hello.del', ['form' => $item]);
