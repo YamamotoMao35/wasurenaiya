@@ -16,6 +16,7 @@
 
                     You are logged in!
                 </div>
+                <th><a href="/wasurenaiya">忘れないやへ</a></th>
             </div>
         </div>
     </div>

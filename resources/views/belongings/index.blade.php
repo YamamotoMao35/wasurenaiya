@@ -22,19 +22,19 @@
 					<a href="#page-top"></a>
 				</li>
 				<li>
-					<a class="page-scroll" href="#about">トピックス</a>
+					<a class="page-scroll" href="/hello">トピックス</a>
 				</li>
 				<li>
-					<a class="page-scroll" href="#services">利用案内</a>
+					<a class="page-scroll" href="https://paiza.hatenablog.com/entry/2018/09/25/paizacloud_php">利用案内</a>
 				</li>
 				<li>
-					<a class="page-scroll" href="#portfolio">会社概要</a>
+					<a class="page-scroll" href="https://miyabi-lab.space/blog/22">会社概要</a>
 				</li>
 				<li>
 					<a class="page-scroll" href="https://twitter.com/MihouTechPeak51">Twitter</a>
 				</li>
 				<li>
-					<a class="page-scroll" href="#contact">管理人ページ</a>
+					<a class="page-scroll" href="/home">管理人ページ</a>
 				</li>
 			</ul>
 		</div>
@@ -47,42 +47,47 @@
 @section('content')
 		@section('main-menu')
 		<section id="about">
-			<div class="container">
+			<div class="container" style="padding-top: 100px">
 				<div class="row">
 					<div class="col-6 col-md-4">
-						<div class="card text-secondary" style="width: 18rem;">
-							<div class="card-body">
-								<h5 class="card-title">カードのタイトル</h5>
-								<p class="card-text">タグで検索</p>
-							</div>
+					<div class="form-group">
+						<label for="exampleSelect1exampleFormControlSelect1">カテゴリから探す</label>
+							<select class="form-control" id="exampleFormControlSelect1">
+								<option>--未選択--</option>
+								<option>筆記用具</option>
+								<option>貴重品</option>
+								<option>小物</option>
+								<option>電化製品</option>
+								<option>書籍</option>
+							</select>
 						</div>
 					</div>
-					<div class="col-6 col-md-4">
-						<div class="card">
-							<h5 class="card-header">検索欄</h5>
-							<div class="card-body">
-								<form action="/board/add" method="post">
-									{{ csrf_field()}}
-									<tr><th></th><td><input type="text" placeholder="キーワードで検索" name="message"></td></tr>
-									<tr><th></th><td><input type="submit" value="send"></td></tr>
-								</form>
-							</div>
-							<div class="card-footer"></div>
+					<form class="form-inline">
+						<div class="form-group col-md-4 mx-sm-3 mb-2">
+							<form action="/board/add" method="post">
+								{{ csrf_field()}}
+								<tr><th></th><td><input type="text" placeholder="キーワードで検索" name="message"></td></tr>
+							</form>
+							<button type="submit" class="btn btn-primary mb-2">検索</button>
 						</div>
-					</div>
+					</form>
 					<div class="col-6 col-md-4">
-						<div class="card">
-							@if (Auth::check())
-							<p>USER: {{$user->name . '(' . $user->email . ')'}}</p>
-							@else
-							<p>※ログインしていません。(<a href="/login">ログイン</a>|<a href="/register">新規登録</a>)</p>
-							@endif
-						</div>
+						<ul class="list-group" style="max-width: 400px;">
+							<li class="list-group-item">
+								<div class="text-warning">
+									@if (Auth::check())
+									<p>USER: {{$user->name . '(' . $user->email . ')'}}</p>
+									@else
+									<p>※ログインしていません。(<a href="/login">ログイン</a>|<a href="/register">新規登録</a>)</p>
+									@endif
+								</div>
+							</li>
+						</ul>
 					</div>
 				</div>
 				<div class="row">
 					<!-- about module -->
-					<div class="col-md-3 text-center">
+					<div class="col-md-4 text-center">
 						<div class="mz-module-about">
 							<i class="fa fa-briefcase ot-circle"></i>
 							<h3>Web Development</h3>
@@ -91,7 +96,7 @@
 					</div>
 					<!-- end about module -->
 					<!-- about module -->
-					<div class="col-md-3 text-center">
+					<div class="col-md-4 text-center">
 						<div class="mz-module-about">
 							<i class="fa fa-photo ot-circle"></i>
 							<h3>Visualisation</h3>
@@ -100,20 +105,11 @@
 					</div>
 					<!-- end about module -->
 					<!-- about module -->
-					<div class="col-md-3 text-center">
+					<div class="col-md-4 text-center">
 						<div class="mz-module-about">
 							<i class="fa fa-camera-retro ot-circle"></i>
 							<h3>Photography</h3>
 							<p>Accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-						</div>
-					</div>
-					<!-- end about module -->
-					<!-- about module -->
-					<div class="col-md-3 text-center">
-						<div class="mz-module-about">
-							<i class="fa fa-cube ot-circle"></i>
-							<h3>UI/UX Design</h3>
-							<p> Itaque earum rerum hic tenetur a sapiente, ut aut reiciendis maiores</p>
 						</div>
 					</div>
 					<!-- end about module -->
