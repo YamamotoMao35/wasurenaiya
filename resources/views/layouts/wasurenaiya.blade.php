@@ -41,8 +41,11 @@
 		<div class="header">
 			@yield('header')
 		</div>
-    <div class="content-extend">
+    <div class="content">
       @yield('content')
+		</div>
+		<div class="main-menu bd-green">
+			@yield('main-menu')
 		</div>
 		<div class="contact bg-white">
       @yield('contact')

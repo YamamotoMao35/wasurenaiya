@@ -104,7 +104,7 @@ class HelloController extends controller{
 
     public function postAuth(Request $request)
     {
-        $mail = $request->email;
+        $email = $request->email;
         $password = $request->password;
         if (Auth::attempt(['email' => $email, 'password' => $password])){
             $msg = 'ログインしました。('. Auth::user()->name .')';

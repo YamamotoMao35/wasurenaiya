@@ -45,18 +45,83 @@
 @endsection
 
 @section('content')
-		<!-- Header -->
-		<header>
+		@section('main-menu')
+		<section id="about">
 			<div class="container">
-				<div class="slider-container">
-					<div class="intro-text">
-						<div class="intro-lead-in">Welcome To Our Studio!</div>
-						<div class="intro-heading">It's Nice To Meet You</div>
-						<a href="#about" class="page-scroll btn btn-xl">Tell Me More</a>
+				<div class="row">
+					<div class="col-6 col-md-4">
+						<div class="card text-secondary" style="width: 18rem;">
+							<div class="card-body">
+								<h5 class="card-title">カードのタイトル</h5>
+								<p class="card-text">タグで検索</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-6 col-md-4">
+						<div class="card">
+							<h5 class="card-header">検索欄</h5>
+							<div class="card-body">
+								<form action="/board/add" method="post">
+									{{ csrf_field()}}
+									<tr><th></th><td><input type="text" placeholder="キーワードで検索" name="message"></td></tr>
+									<tr><th></th><td><input type="submit" value="send"></td></tr>
+								</form>
+							</div>
+							<div class="card-footer"></div>
+						</div>
+					</div>
+					<div class="col-6 col-md-4">
+						<div class="card">
+							@if (Auth::check())
+							<p>USER: {{$user->name . '(' . $user->email . ')'}}</p>
+							@else
+							<p>※ログインしていません。(<a href="/login">ログイン</a>|<a href="/register">新規登録</a>)</p>
+							@endif
+						</div>
 					</div>
 				</div>
+				<div class="row">
+					<!-- about module -->
+					<div class="col-md-3 text-center">
+						<div class="mz-module-about">
+							<i class="fa fa-briefcase ot-circle"></i>
+							<h3>Web Development</h3>
+							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+						</div>
+					</div>
+					<!-- end about module -->
+					<!-- about module -->
+					<div class="col-md-3 text-center">
+						<div class="mz-module-about">
+							<i class="fa fa-photo ot-circle"></i>
+							<h3>Visualisation</h3>
+							<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
+						</div>
+					</div>
+					<!-- end about module -->
+					<!-- about module -->
+					<div class="col-md-3 text-center">
+						<div class="mz-module-about">
+							<i class="fa fa-camera-retro ot-circle"></i>
+							<h3>Photography</h3>
+							<p>Accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+						</div>
+					</div>
+					<!-- end about module -->
+					<!-- about module -->
+					<div class="col-md-3 text-center">
+						<div class="mz-module-about">
+							<i class="fa fa-cube ot-circle"></i>
+							<h3>UI/UX Design</h3>
+							<p> Itaque earum rerum hic tenetur a sapiente, ut aut reiciendis maiores</p>
+						</div>
+					</div>
+					<!-- end about module -->
+				</div>
 			</div>
-		</header>
+			<!-- /.container -->
+		</section>
+		@endsection
 		@section('contact')
 		<section id="contact">
 			<div class="container">
@@ -72,7 +137,6 @@
 					<div class="col-md-3">
 						<h3>仕事場所</h3>
 						<p>兵庫県</p>
-						<p><i class="fa fa-phone"></i> 090-2044-3050</p>
 						<!-- <p><i class="fa fa-envelope"></i> mail@yourcompany.com</p> -->
 					</div>
 					<div class="col-md-3">
@@ -109,7 +173,7 @@
 							<div class="row">
 								<div class="col-lg-12 text-center">
 									<div id="success"></div>
-									<button type="submit" class="btn btn-primary">Send Message</button>
+									<button type="submit" class="btn btn-primary">送信</button>
 								</div>
 							</div>
 						</form>
@@ -128,6 +192,6 @@
 				<p>copyright 2019 wasurenaiya.</p>
 			</div>
 		</footer>
-		@endsection
+    @endsection
 
 @endsection
