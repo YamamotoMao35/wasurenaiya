@@ -16,11 +16,17 @@
 @endsection
 
 @section('content')
+<!-- ミドルウェアの説明 -->
+<p>これは、<middleware>localhost:8000/hello/add</middleware>へのリンクです。</p>
+<p>これは、<middleware>localhost:8000/wasurenaiya</middleware>へのリンクです。</p>
+<p>これは、<middleware>localhost:8000/home</middleware>へのリンクです。</p>
+<!-- ログイン認証 -->
 @if (Auth::check())
 <p>USER: {{$user->name . '(' . $user->email . ')'}}</p>
 @else
 <p>※ログインしていません。(<a href="/login">ログイン</a>|<a href="/register">新規登録</a>)</p>
 @endif
+<!-- データの説明 -->
 <table>
   <tr>
     <th><a href="/hello?sort=name">Name</a></th>

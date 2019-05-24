@@ -16,6 +16,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('wasurenaiya', 'BelongingsController');
+
 Route::get('hello', 'HelloController@index')->middleware('auth');
 Route::post('hello', 'HelloController@post');
 Route::get('hello/add', 'HelloController@add');
@@ -45,3 +47,5 @@ Route::post('board/add', 'BoardController@create');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('hello/auth', 'HelloController@getAuth');
+Route::post('hello/auth', 'HelloController@postAuth');
